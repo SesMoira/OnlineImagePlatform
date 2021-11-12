@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineImagePlatform", "OnlineImagePlatform\OnlineImagePlatform.csproj", "{645F1A9C-B70E-4EC4-AFB1-397FA18F0BFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheImageGallery.Data", "TheImageGallery.Data\TheImageGallery.Data.csproj", "{A6DF42B4-4A32-4A65-BE15-B327E1074302}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheImageGallery.Data", "TheImageGallery.Data\TheImageGallery.Data.csproj", "{A6DF42B4-4A32-4A65-BE15-B327E1074302}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheImageGallery.Service", "TheImageGallery.Service\TheImageGallery.Service.csproj", "{83FC0290-2E8B-4D08-9C36-2EA99CDA64A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A6DF42B4-4A32-4A65-BE15-B327E1074302}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6DF42B4-4A32-4A65-BE15-B327E1074302}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6DF42B4-4A32-4A65-BE15-B327E1074302}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83FC0290-2E8B-4D08-9C36-2EA99CDA64A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83FC0290-2E8B-4D08-9C36-2EA99CDA64A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83FC0290-2E8B-4D08-9C36-2EA99CDA64A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83FC0290-2E8B-4D08-9C36-2EA99CDA64A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

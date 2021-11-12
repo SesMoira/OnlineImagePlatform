@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TheImageGallery.Data;
+using TheImageGallery.Service;
 
 namespace OnlineImagePlatform
 {
@@ -34,6 +35,7 @@ namespace OnlineImagePlatform
             services.AddDbContext<AuthDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AuthConString")));
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
 
+            services.AddScoped<IImage, ImageService>();
             services.AddMvc();
             services.ConfigureApplicationCookie(config =>
             {

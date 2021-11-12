@@ -4,38 +4,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TheImageGallery.Data;
 using TheImageGallery.Data.Models;
 namespace OnlineImagePlatform.Controllers
 {
     public class GalleryController : Controller
     {
-        public IActionResult Index()
+        private readonly IImage _imageService;
+
+        public GalleryController(IImage imageService)
         {
-            var NatureTag = new List<ImageTag>();
-            var CarsTag = new List<ImageTag>();
+            _imageService = imageService;
+        }
+        public IActionResult Index()
+        { 
 
-            var tag1 = new ImageTag()
-            {
-                Description = "Adveture",
-                Id = 0
-            };
-
-            NatureTag.Add(tag1);
-
-            var imageList = new List<GalleryImage>()
-            {
-                GalleryImage() 
-                {
-                    Title = "Nature",
-                    Url = "",
-                    Created = DateTime.Now,
-                    Tags = NatureTag,
-                    CapturesBy = "Sesi",
-                    Geolocation = "Johannesburg"
-                };
-
-            };
-
+            var imageList = _imageService.GetAll();
             var model = new GalleryIndexModel()
             {
                 Images = imageList,
