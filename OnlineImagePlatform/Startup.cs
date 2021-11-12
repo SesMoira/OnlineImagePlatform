@@ -30,9 +30,11 @@ namespace OnlineImagePlatform
             services.AddRazorPages();
             services.AddDbContext<TheImageGalleryDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("AuthConString")));
+
             services.AddDbContext<AuthDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AuthConString")));
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
 
+            services.AddMvc();
             services.ConfigureApplicationCookie(config =>
             {
                 config.LoginPath = "/Login";

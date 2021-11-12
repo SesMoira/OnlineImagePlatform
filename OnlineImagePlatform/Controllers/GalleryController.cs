@@ -24,7 +24,7 @@ namespace OnlineImagePlatform.Controllers
 
             var imageList = new List<GalleryImage>()
             {
-                GalleryImage()
+                GalleryImage() 
                 {
                     Title = "Nature",
                     Url = "",
