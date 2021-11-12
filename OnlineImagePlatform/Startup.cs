@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TheImageGallery.Data;
 
 namespace OnlineImagePlatform
 {
@@ -27,6 +28,8 @@ namespace OnlineImagePlatform
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddDbContext<TheImageGalleryDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("AuthConString")));
             services.AddDbContext<AuthDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AuthConString")));
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
 
