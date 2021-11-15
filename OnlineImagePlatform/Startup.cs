@@ -29,14 +29,19 @@ namespace OnlineImagePlatform
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
             services.AddDbContext<TheImageGalleryDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("AuthConString")));
 
-            services.AddDbContext<AuthDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AuthConString")));
+            services.AddDbContext<AuthDbContext>(options => 
+            options.UseSqlServer(Configuration.GetConnectionString("AuthConString")));
+
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
 
             services.AddScoped<IImage, ImageService>();
+
             services.AddMvc();
+
             services.ConfigureApplicationCookie(config =>
             {
                 config.LoginPath = "/Login";
@@ -58,6 +63,7 @@ namespace OnlineImagePlatform
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();

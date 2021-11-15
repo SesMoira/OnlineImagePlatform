@@ -25,7 +25,7 @@ namespace OnlineImagePlatform.Pages
             await signInManager.SignOutAsync();
             return RedirectToPage("Login");
         }
-        public IActionResult OnPostDontLogoutAsync()
+        public IActionResult OnPostDoNotLogoutAsync()
         {
             return RedirectToPage("Index");
         }
